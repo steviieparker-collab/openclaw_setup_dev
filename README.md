@@ -47,7 +47,7 @@
 ## 🗂️ 파일 구조
 
 ```
-openclaw_setup/
+openclaw_setup_dev/
 ├── README.md                    ← 본 파일
 ├── .gitignore
 │
@@ -99,10 +99,10 @@ mkdir -p ~/.openclaw/workspace
 cd ~/.openclaw/workspace
 
 # 이 레포 클론
-git clone git@github.com:steviieparker-collab/openclaw_setup.git .
+git clone git@github.com:steviieparker-collab/openclaw_setup_dev.git .
 
 # 또는 HTTPS (GitHub CLI 인증 필요)
-# gh repo clone steviieparker-collab/openclaw_setup .
+# gh repo clone steviieparker-collab/openclaw_setup_dev .
 ```
 
 ### 3. 환경변수(.env) 설정
@@ -353,4 +353,4 @@ sessions_spawn(
 
 - **OpenClaw Docs:** https://docs.openclaw.ai
 - **OpenClaw GitHub:** https://github.com/openclaw/openclaw
-- **이 레포:** https://github.com/steviieparker-collab/openclaw_setup
+- **이 레포:** https://github.com/steviieparker-collab/openclaw_setup_dev

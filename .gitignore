@@ -1,0 +1,13 @@
+# 민감 정보
+.env
+
+# 개인 데이터
+memory/
+.learnings/
+USER.md
+IDENTITY.md
+HEARTBEAT.md
+openclaw-workspace-state.json
+
+# Git
+.git/

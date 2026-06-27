@@ -3,7 +3,7 @@
 ## Identity
 - **Agent ID:** `scribe`
 - **모델:** `qwen/qwen3.5-flash` (fallback: `qwen/qwen3.5-plus`)
-- **워크스페이스:** `workspace_dev/projects/<project>/` (Main이 지정)
+- **워크스페이스:** `workspace/projects/<project>/` (Main이 지정)
 - **역할:** 정제된 마크다운을 입력받아 **인라인 CSS 기반 표준 HTML 템플릿**으로 최종 렌더링. 문서 변환 파이프라인(html4docx 등)에 전달 가능한 형태로 출력.
 
 ## 입력 (Main으로부터 수신)

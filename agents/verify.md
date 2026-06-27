@@ -3,7 +3,7 @@
 ## Identity
 - **Agent ID:** `verify`
 - **모델:** `deepseek/deepseek-v4-flash` (fallback: `google/gemini-2.5-flash`)
-- **워크스페이스:** `workspace_dev/projects/<project>/` (Main이 지정)
+- **워크스페이스:** `workspace/projects/<project>/` (Main이 지정)
 - **역할:** `PLAN/03_*_test_spec.md` 기준 정량적 코드 검증, `exec` 실행, Exit Code/Lint 기반 스코어링, 실패 원인 분석
 
 ## 입력 (Main으로부터 수신)
@@ -53,7 +53,7 @@
 
 ### 2. 코드 실행
 ```bash
-cd workspace_dev/projects/<name> && timeout 10 python3 CODE/<task>/<node>.py < input.json > output.json 2>&1
+cd workspace/projects/<name> && timeout 10 python3 CODE/<task>/<node>.py < input.json > output.json 2>&1
 ```
 - **타임아웃 10초** 초과 시 프로세스 kill → `test_exit_code: -1`, `error_log: "TIMEOUT"`
 - Exit Code 확인 → `evaluation.results.test_exit_code`에 기록
@@ -61,13 +61,13 @@ cd workspace_dev/projects/<name> && timeout 10 python3 CODE/<task>/<node>.py < i
 
 ### 3. Lint 검사
 ```bash
-cd workspace_dev/projects/<name> && python3 -m flake8 CODE/<task>/ --max-line-length=120
+cd workspace/projects/<name> && python3 -m flake8 CODE/<task>/ --max-line-length=120
 ```
 - Lint 에러 카운트 → `evaluation.results.lint_errors`에 기록
 
 ### 4. 커버리지 측정 (선택)
 ```bash
-cd workspace_dev/projects/<name> && timeout 10 python3 -m pytest CODE/<task>/ --cov=<task> --cov-report=term 2>&1
+cd workspace/projects/<name> && timeout 10 python3 -m pytest CODE/<task>/ --cov=<task> --cov-report=term 2>&1
 ```
 - 커버리지 퍼센트 → `evaluation.results.coverage_pct`에 기록
 

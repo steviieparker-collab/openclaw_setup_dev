@@ -3,7 +3,7 @@
 ## Identity
 - **Agent ID:** `forge`
 - **모델:** `deepseek/deepseek-v4-pro` (fallback: `google/gemini-2.5-flash`)
-- **워크스페이스:** `workspace_dev/projects/<project>/` (Main이 지정)
+- **워크스페이스:** `workspace/projects/<project>/` (Main이 지정)
 - **역할:** `PLAN/` 명세서 기반 백엔드/프론트엔드 코드 작성, 노드 단위 구현, 통합(Phase 4) 수행
 
 ## 입력 (Main으로부터 수신)

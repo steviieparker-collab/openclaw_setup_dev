@@ -124,7 +124,7 @@ Verify가 Exit Code 0을 반환했더라도, 타이밍 의존 코드, 레이스 
 ### Rule 6: State-Driven Execution (No Blind Routing)
 **Trigger:** 서브 에이전트 호출 전 매번.
 **Action:**
-1. Main은 반드시 `workspace_dev/state/project_state.json`을 읽는다.
+1. Main은 반드시 `workspace/state/project_state.json`을 읽는다.
 2. 상태 파일이 없거나 손상되었거나 `current_phase`가 정의되지 않았으면, Main은 작업을 중단(HALT)하고 제네릭 상태 파일을 생성한 후 사용자에게 현재 프로젝트 단계를 확인 요청한다.
 3. 서브 에이전트는 입력 아티팩트가 디스크에 존재함이 검증된 후에만 호출된다 (ENOENT 체크).
 

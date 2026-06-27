@@ -95,8 +95,8 @@ openclaw --version
 
 ```bash
 # 워크스페이스 생성
-mkdir -p ~/.openclaw/workspace_dev
-cd ~/.openclaw/workspace_dev
+mkdir -p ~/.openclaw/workspace
+cd ~/.openclaw/workspace
 
 # 이 레포 클론
 git clone git@github.com:steviieparker-collab/openclaw_setup.git .
@@ -127,7 +127,7 @@ chmod 600 ~/.openclaw/.env
 ### 4. 프로젝트 디렉토리 구조 생성
 
 ```bash
-cd ~/.openclaw/workspace_dev
+cd ~/.openclaw/workspace
 
 # 프로젝트 템플릿 디렉토리 (Architect가 프로젝트 시작 시 자동 생성하지만, 수동 가능)
 mkdir -p projects
@@ -157,49 +157,49 @@ OpenClaw Gateway가 실행 중인 상태에서 각 에이전트를 등록한다:
 openclaw agent create main \
   --model deepseek/deepseek-v4-flash \
   --fallback google/gemini-2.5-flash \
-  --workspace ~/.openclaw/workspace_dev
+  --workspace ~/.openclaw/workspace
 
 # 서브 에이전트 등록 (6종)
 # Architect
 openclaw agent create architect \
   --model deepseek/deepseek-v4-flash \
   --fallback google/gemini-2.5-flash \
-  --workspace ~/.openclaw/workspace_dev \
-  --system-prompt "$(cat ~/.openclaw/workspace_dev/agents/architect.md)"
+  --workspace ~/.openclaw/workspace \
+  --system-prompt "$(cat ~/.openclaw/workspace/agents/architect.md)"
 
 # Forge
 openclaw agent create forge \
   --model deepseek/deepseek-v4-pro \
   --fallback google/gemini-2.5-flash \
-  --workspace ~/.openclaw/workspace_dev \
-  --system-prompt "$(cat ~/.openclaw/workspace_dev/agents/forge.md)"
+  --workspace ~/.openclaw/workspace \
+  --system-prompt "$(cat ~/.openclaw/workspace/agents/forge.md)"
 
 # Verify
 openclaw agent create verify \
   --model deepseek/deepseek-v4-flash \
   --fallback google/gemini-2.5-flash \
-  --workspace ~/.openclaw/workspace_dev \
-  --system-prompt "$(cat ~/.openclaw/workspace_dev/agents/verify.md)"
+  --workspace ~/.openclaw/workspace \
+  --system-prompt "$(cat ~/.openclaw/workspace/agents/verify.md)"
 
 # Illustrator
 openclaw agent create illustrator \
   --model google/gemini-2.5-flash \
-  --workspace ~/.openclaw/workspace_dev \
-  --system-prompt "$(cat ~/.openclaw/workspace_dev/agents/illustrator.md)"
+  --workspace ~/.openclaw/workspace \
+  --system-prompt "$(cat ~/.openclaw/workspace/agents/illustrator.md)"
 
 # Director
 openclaw agent create director \
   --model google/gemini-2.5-flash \
   --fallback google/gemini-3.1-flash-lite \
-  --workspace ~/.openclaw/workspace_dev \
-  --system-prompt "$(cat ~/.openclaw/workspace_dev/agents/director.md)"
+  --workspace ~/.openclaw/workspace \
+  --system-prompt "$(cat ~/.openclaw/workspace/agents/director.md)"
 
 # Scribe
 openclaw agent create scribe \
   --model qwen/qwen3.5-flash \
   --fallback qwen/qwen3.5-plus \
-  --workspace ~/.openclaw/workspace_dev \
-  --system-prompt "$(cat ~/.openclaw/workspace_dev/agents/scribe.md)"
+  --workspace ~/.openclaw/workspace \
+  --system-prompt "$(cat ~/.openclaw/workspace/agents/scribe.md)"
 ```
 
 > **참고:** `openclaw agent create`의 정확한 CLI 옵션은 Gateway 버전에 따라 다를 수 있다. `openclaw agent create --help`로 확인할 것. 또는 Gateway 설정 UI에서 직접 등록 가능.

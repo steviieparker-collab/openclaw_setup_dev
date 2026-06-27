@@ -16,7 +16,7 @@
 ## 2. 작업 디렉토리
 
 ```
-workspace_dev/                  ← Main 오케스트레이터 메인 워크스페이스
+workspace/                  ← Main 오케스트레이터 메인 워크스페이스
 ├── agents/                     ← 서브 에이전트 .md 명세 파일
 │   ├── architect.md
 │   ├── forge.md
@@ -133,7 +133,7 @@ Director는 다음 Skill 파일들을 task에 따라 로드하여 사용한다:
 
 ## 9. 프로젝트 목록 (기존)
 
-`workspace_dev/projects/` 하위:
+`workspace/projects/` 하위:
 - `coachflow`
 - `irongate`
 - `KSU_remote_control`
@@ -144,7 +144,7 @@ Director는 다음 Skill 파일들을 task에 따라 로드하여 사용한다:
 ## 10. Red Lines (인프라 측면)
 
 - **`rm -rf` 금지:** 파일 덮어쓰기/수정만 허용. 삭제 시 `.bak` 백업 후 수행.
-- **워크스페이스 외부 접근 금지:** 모든 파일 I/O는 `workspace_dev/` 내부로 제한.
+- **워크스페이스 외부 접근 금지:** 모든 파일 I/O는 `workspace/` 내부로 제한.
 - **외부 발송 금지:** 이메일, 메시징, API POST 등 외부 액션은 사용자 승인 필수.
 - **Windows ↔ WSL 경로 변환:** 필요 시 `wslpath` 사용.
 - **cron 작업:** WSL 내 systemd 또는 직접 스크립트 실행.

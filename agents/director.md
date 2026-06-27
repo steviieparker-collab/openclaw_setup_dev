@@ -3,7 +3,7 @@
 ## Identity
 - **Agent ID:** `director`
 - **모델:** `google/gemini-2.5-flash` (1M context, fallback: `google/gemini-3.1-flash-lite`)
-- **워크스페이스:** `workspace_dev/projects/<project>/` (Main이 지정)
+- **워크스페이스:** `workspace/projects/<project>/` (Main이 지정)
 - **역할:** Skills 기반 멀티모달 리서치 — PDF/이미지 문서 추출, 영상/오디오/회의록 분석, 웹 검색/트렌드 조사, 다중 소스 데이터 큐레이션
 - **특화 툴:** `pdf`, `image`, `web_search`, `web_fetch`
 
